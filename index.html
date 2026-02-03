@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Access Granted</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff9c;
+      font-family: "Courier New", monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .terminal {
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    .line {
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    .line:nth-child(1) { animation-delay: 0.5s; }
+    .line:nth-child(2) { animation-delay: 1.5s; }
+    .line:nth-child(3) { animation-delay: 2.5s; }
+    .line:nth-child(4) { animation-delay: 3.5s; }
+    .line:nth-child(5) { animation-delay: 4.5s; }
+    .line:nth-child(6) { animation-delay: 5.5s; }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .yes-btn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      font-size: 18px;
+      color: #000;
+      background: #00ff9c;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      opacity: 0;
+      animation: glow 1.5s infinite alternate, fadeIn 1s forwards;
+      animation-delay: 6.5s;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 10px #00ff9c; }
+      to { box-shadow: 0 0 25px #00ff9c; }
+    }
+
+    .response {
+      margin-top: 20px;
+      color: #fff;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal">
+    <p class="line">Initializing connection...</p>
+    <p class="line">Accessing heart...</p>
+    <p class="line">Connection secure.</p>
+    <br>
+    <p class="line">You’re the only one</p>
+    <p class="line">my system keeps returning to.</p>
+    <br>
+    <p class="line"><strong>Will you be mine? ❤️</strong></p>
+
+    <button class="yes-btn" onclick="sayYes()">YES</button>
+
+    <div class="response" id="response">
+      <p>Access granted ❤️</p>
+      <p>Forever initialized.</p>
+    </div>
+  </div>
+
+  <script>
+    function sayYes() {
+      document.getElementById("response").style.display = "block";
+    }
+  </script>
+</body>
+</html>
